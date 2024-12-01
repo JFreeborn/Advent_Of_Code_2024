@@ -30,16 +30,34 @@ public class DayOne
      
     */
     
-    public static int Run(List<int>? listA, List<int>? listB)
+    public static int Run()
     {
-        listA ??= [3, 4, 2, 1, 3, 3];
-        listB ??= [ 4, 3, 5, 3, 9, 3 ];
+        const string filePath = "inputs.txt";
 
-        if (listA.Count != listB.Count)
+        var listOne = new List<int>();
+        var listTwo = new List<int>();
+        
+        // Read the file line by line
+        foreach (var line in File.ReadLines(filePath))
+        {
+            var parts = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            
+            // we should not get this but for the end of the file if there is a blank line we will keep it.
+            if (parts.Length != 2) 
+                continue;
+       
+            var num1 = int.Parse(parts[0]);
+            var num2 = int.Parse(parts[1]);
+                
+            listOne.Add(num1);
+            listTwo.Add(num2);
+        }
+
+        if (listOne.Count != listTwo.Count)
             throw new InvalidOperationException("Lists have different lengths.");
         
-        var sortedListA = listA.OrderBy(i => i).ToList();
-        var sortedListB = listB.OrderBy(i => i).ToList();
+        var sortedListA = listOne.OrderBy(i => i).ToList();
+        var sortedListB = listTwo.OrderBy(i => i).ToList();
 
         return sortedListA.Select((t, i) => Math.Abs(t - sortedListB[i])).Sum();
     }
