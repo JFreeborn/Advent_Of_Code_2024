@@ -30,14 +30,13 @@ public class DayOne
      
     */
     
-    public static int Run()
+    public static int RunPartOne()
     {
         const string filePath = "inputs.txt";
 
         var listOne = new List<int>();
         var listTwo = new List<int>();
         
-        // Read the file line by line
         foreach (var line in File.ReadLines(filePath))
         {
             var parts = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
@@ -60,5 +59,49 @@ public class DayOne
         var sortedListB = listTwo.OrderBy(i => i).ToList();
 
         return sortedListA.Select((t, i) => Math.Abs(t - sortedListB[i])).Sum();
+    }
+    
+    /*
+    Sample list
+        A   B
+        -   -
+        3   4
+        4   3
+        2   5
+        1   3
+        3   9
+        3   3
+
+    This time, you'll need to figure out exactly how often each number from the left list appears in the right list.
+    Calculate a total similarity score by adding up each number in the left list after multiplying it by the number of times that number appears in the right list.
+    */
+    
+    public static int RunPartTwo()
+    {
+        const string filePath = "inputs.txt";
+        
+        var listOne = new List<int>();
+        var listTwo = new List<int>();
+        
+        foreach (var line in File.ReadLines(filePath))
+        {
+            var parts = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            
+            // we should not get this but for the end of the file if there is a blank line we will keep this part
+            if (parts.Length != 2) 
+                continue;
+       
+            var num1 = int.Parse(parts[0]);
+            var num2 = int.Parse(parts[1]);
+                
+            listOne.Add(num1);
+            listTwo.Add(num2);
+        }
+
+        if (listOne.Count != listTwo.Count)
+            throw new InvalidOperationException("Lists have different lengths.");
+        
+        var total = listOne.Sum(num => num * listTwo.Count(x => x == num));
+        return total;
     }
 }
