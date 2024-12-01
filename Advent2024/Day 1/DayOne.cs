@@ -41,8 +41,6 @@ public class DayOne
         var sortedListA = listA.OrderBy(i => i).ToList();
         var sortedListB = listB.OrderBy(i => i).ToList();
 
-        var totalDistance = sortedListA.Select((t, i) => Math.Abs(t - sortedListB[i])).Sum();
-
-        return totalDistance;
+        return sortedListA.Select((t, i) => Math.Abs(t - sortedListB[i])).Sum();
     }
 }
