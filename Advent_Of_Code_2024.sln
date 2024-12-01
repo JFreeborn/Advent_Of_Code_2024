@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advent2024", "Advent2024\Advent2024.csproj", "{7B12D43F-C2B2-4917-A21E-E2CF4A6EAEC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advent2024Tests", "Advent2024Tests\Advent2024Tests.csproj", "{E18DA25A-B73B-4319-8289-70C5B16E60FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{7B12D43F-C2B2-4917-A21E-E2CF4A6EAEC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B12D43F-C2B2-4917-A21E-E2CF4A6EAEC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B12D43F-C2B2-4917-A21E-E2CF4A6EAEC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E18DA25A-B73B-4319-8289-70C5B16E60FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E18DA25A-B73B-4319-8289-70C5B16E60FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E18DA25A-B73B-4319-8289-70C5B16E60FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E18DA25A-B73B-4319-8289-70C5B16E60FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
