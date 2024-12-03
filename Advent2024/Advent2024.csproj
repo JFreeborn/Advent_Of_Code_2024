@@ -8,7 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <None Include="bin\Debug\net8.0\inputs.txt" />
+      <None Include="bin\Debug\net8.0\inputs_day_one.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="bin\Debug\net8.0\inputs_day_two.txt" />
     </ItemGroup>
 
 </Project>

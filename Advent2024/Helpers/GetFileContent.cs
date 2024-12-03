@@ -4,7 +4,7 @@ public class GetFileContent
 {
     public (List<int>, List<int>) GetListsFromFile()
     {
-        const string filePath = "inputs.txt";
+        const string filePath = "inputs_day_one.txt";
 
         var listOne = new List<int>();
         var listTwo = new List<int>();
